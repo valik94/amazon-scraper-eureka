@@ -6,7 +6,6 @@ const request = require('request-promise');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// const apiKey = 'd7c73fbb4533878a7960fadb552176e3';
 //require public to get their own apiKey
 // const  = `http://api.scraperapi.com?api_key=${apiKey}&autoparse=true`;
 
