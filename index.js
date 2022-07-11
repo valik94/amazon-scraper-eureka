@@ -21,7 +21,7 @@ app.get('/products/:productId', async(req,res) =>{
     const { productId } = req.params; //get productId from parameters
     const {api_key} = req.query; //this is where we get the entered API key into the form 
     try{
-        const response = await request(`${generateScraperUrl(apiKey)}&url=https://www.amazon.com/dp/${productId}`)
+        const response = await request(`${generateScraperUrl(api_key)}&url=https://www.amazon.com/dp/${productId}`)
 
         res.json(JSON.parse(response));
     } catch(error){
@@ -35,7 +35,7 @@ app.get('/products/:productId/reviews', async(req,res) =>{
     const {api_key} = req.query; //this is where we get the entered API key into the form 
 
     try{
-        const response = await request(`${generateScraperUrl(apiKey)}&url=https://www.amazon.com/product-reviews/${productId}`)
+        const response = await request(`${generateScraperUrl(api_key)}&url=https://www.amazon.com/product-reviews/${productId}`)
 
         res.json(JSON.parse(response));
     } catch(error){
@@ -48,7 +48,7 @@ app.get('/products/:productId/offers', async(req,res) =>{
     const {api_key} = req.query; //this is where we get the entered API key into the form 
 
     try{
-        const response = await request(`${generateScraperUrl(apiKey)}&url=https://www.amazon.com/gp/offer-listing/${productId}`)
+        const response = await request(`${generateScraperUrl(api_key)}&url=https://www.amazon.com/gp/offer-listing/${productId}`)
 
         res.json(JSON.parse(response));
     } catch(error){
